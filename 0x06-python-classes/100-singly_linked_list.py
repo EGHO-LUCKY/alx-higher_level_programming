@@ -1,4 +1,4 @@
-#!/usr/bin/pyhon3
+#!/usr/bin/python3
 """This is a module on list classes"""
 
 
@@ -12,11 +12,7 @@ class Node:
             next_node (Node): node object.
 
         """
-        if not isinstance(data, int):
-            raise TypeError("data must be an integer")
         self.data = data
-        if (next_node is not None and not isinstance(next_node, Node)):
-            raise TypeError('next_node must be a Node object')
         self.next_node = next_node
 
     @property
