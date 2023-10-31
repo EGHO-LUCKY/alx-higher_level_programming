@@ -5,24 +5,35 @@
 class Node:
     """This is a node class"""
     def __init__(self, data, next_node=None):
+        """Initializes a Node object.
+
+        Args:
+            data (int): node data
+            next_node (Node): node object.
+
+            """
         self.data = data
         self.next_node = next_node
 
     @property
+    """Gets the Node data"""
     def data(self):
         return self.__data
 
     @data.setter
+    """Sets the Node data"""
     def data(self, value):
         if not isinstance(value, int):
             raise TypeError("data must be an integer")
         self.__data = value
 
     @property
+    """Gets the next node"""
     def next_node(self):
         return self.__next_node
 
     @next_node.setter
+    """Sets the next node"""
     def next_node(self, value):
         if not isinstance(value, Node) and (value is not None):
             raise TypeError("next_node must be a Node object")
