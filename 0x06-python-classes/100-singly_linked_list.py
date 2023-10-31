@@ -11,8 +11,12 @@ class Node:
             data (int): node data
             next_node (Node): node object.
 
-            """
+        """
+        if not isinstance(data, int):
+            raise TypeError("data must be an integer")
         self.data = data
+        if (next_node is not None and not isinstance(next_node, Node)):
+            raise TypeError('next_node must be a Node object')
         self.next_node = next_node
 
     @property
