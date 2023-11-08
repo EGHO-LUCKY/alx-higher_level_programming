@@ -1,14 +1,10 @@
-
-"""
-Class to JSON module
-"""
+#!/usr/bin/python3
+'''function that returns the dictionary description with simple data structure
+'''
 
 
 def class_to_json(obj):
-    """Returns the dictionary decription of an object"""
-    attribs = dir(obj)
-    res = {}
-    for a in attribs:
-        if obj.__getattribute__(a):
-            res[a] = obj.__getattribute__(a)
-    return res
+    '''module class_to_json
+       returns builds a dictionary
+    '''
+    return obj.__dict__
