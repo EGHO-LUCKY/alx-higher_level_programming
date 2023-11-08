@@ -1,19 +1,20 @@
-
-"""
-Student definition module
-"""
+#!/usr/bin/python3
+''' a class Student that defines a student
+'''
 
 
 class Student:
-    """A student definition class"""
+    '''module class student
+    '''
+
     def __init__(self, first_name, last_name, age):
+        '''method __init__
+        '''
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self):
-        d = {}
-        d['first_name'] = self.first_name
-        d['last_name'] = self.last_name
-        d['age'] = self.age
-        return d
+        '''method to_json
+        '''
+        return self.__dict__
