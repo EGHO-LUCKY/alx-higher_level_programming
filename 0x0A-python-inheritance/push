@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Check if the correct number of arguments is provided
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <file-to-push> <commit-message>"
+    exit 1
+fi
+
+# Variables
+file_to_push=$1
+commit_func="Add"
+commit_message="$commit_func $1"
+
+# Check if the file exists
+if [ ! -f "$file_to_push" ]; then
+	echo "Error: File not found - $file_to_push"
+	exit 1
+fi
+
+# Add the file to the staging area
+git add "$file_to_push"
+
+# Commit the changes
+git commit -m "$commit_message"
+
+# Push the changes to GitHub
+git push
